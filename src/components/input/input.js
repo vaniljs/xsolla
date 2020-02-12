@@ -5,30 +5,24 @@ import "./input.sass";
 export default class Input extends Component {
 
     state = {
+        name: this.props.name,
         place:  this.props.placehold,
+        val: this.props.val,
         require: this.props.required,
         error: true
     };
 
-    onInput(e) {
-        if (e.target.value) {
-            return this.setState({
-                error: false
-            })
-        }
-    }
-
     render() {
 
-        let { place, require, error } = this.state;
+        let { place, require, name, val } = this.state;
 
         return (
             <React.Fragment>
                 <input
                     type="text"
-                    className={require ? "error" : null}
+                    name={name}
                     placeholder={place}
-                    onInput={this.onInput.bind(this)}
+                    defaultValue={val}
                 />
             </React.Fragment>
         )

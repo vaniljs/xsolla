@@ -5,9 +5,14 @@ export default class Inputfile extends Component {
 
     state = {
         selected: true,
-        fileName: "1111111111111111111111111111111111111111111111111111111",
+        fileName: "",
         require: this.props.required,
-        error: true
+    };
+
+    setName = (e) => {
+        this.setState({
+            fileName: e.target.value.replace(/^.*[\\\/]/, '')
+        })
     };
 
     render() {
@@ -18,8 +23,15 @@ export default class Inputfile extends Component {
             <div
                 className="input_file_wrapper">
                 <span>{fileName}</span>
-                <div className="btn_select">{selected ? "Выберите файл" : "Выбран"}</div>
-                <input type="hidden"/>
+                <label htmlFor="file" className="btn_select">
+                        <p>{fileName ? "Выбран" : "Выберите файл"}</p>
+                </label>
+                <input
+                    type="file"
+                    id="file"
+                    name="file[]"
+                    multiple
+                    onChange={this.setName}/>
             </div>
         )
     }

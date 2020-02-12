@@ -16,7 +16,7 @@ module.exports = {
     },
     output: {
         filename: '[name].js',
-        path: path.resolve(__dirname, 'dist/js'),
+        path: path.resolve(__dirname, 'dist/'),
     },
     module: {
         rules: [
@@ -40,6 +40,18 @@ module.exports = {
                 test: /\.js$/,
                 loader: 'babel-loader',
                 exclude: '/node_modules/'
+            },
+            {
+                test: /\.(png|svg|jpg|gif)$/,
+                use: [{
+                        loader: 'file-loader',
+                        options: {
+                            name: f => {
+                                let dirNameInsideAssets = path.relative(path.join(__dirname, 'src'), path.dirname(f));
+                                return `${dirNameInsideAssets}/[name].[ext]`;
+                            }
+                        }
+                    }],
             },
         ],
     },
