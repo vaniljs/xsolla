@@ -2,7 +2,7 @@
 Повтор формы с сайта 
 [https://иксолла.рф/careers/11529/apply](https://иксолла.рф/careers/11529/apply)
 
-[Демо](qeru.ru/xsolla/)
+[Демо](http://qeru.ru/xsolla/)
 
 +Небольшие усовершенствования
 
