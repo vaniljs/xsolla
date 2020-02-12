@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import "./app.sass";
 import Input from "../input";
 import Inputfile from "../input-file";
+import InputPhone from "../input-phone/input-phone";
 
 export default class App extends Component {
 
@@ -50,7 +51,7 @@ export default class App extends Component {
                             <p className="label_input">Кому отправить?*</p>
                             <Input required name="email" placehold="yourname@example.com"/>
                             <p className="label_input">Телефон*</p>
-                            <Input name="phone" val="12345" required/>
+                            <InputPhone name="phone" value="+7(___)___-____"/>
                             <p className="label_input">Резюме*</p>
                             <Inputfile required/>
                         </div>
@@ -65,8 +66,7 @@ export default class App extends Component {
                     </div>
                     <div className="row">
                         <div>
-                            <span>Отправляя форму, вы даете согласие на обработку <a href="//иксолла.рф/privacypolicy/"
-                                                                                     target="_blank">персональных данных</a></span>
+                            <span>Отправляя форму, вы даете согласие на обработку <a href="//иксолла.рф/privacypolicy/" target="_blank">персональных данных</a></span>
                         </div>
                         <div>
                             {!sended && !sending ? <button className="btn_send" onClick={this.handleSubmit}>Отправить
