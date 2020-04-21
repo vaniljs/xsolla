@@ -42,6 +42,7 @@ export default class InputPhone extends Component {
         return (
             <React.Fragment>
                 <input
+                    name="phone"
                     type="text"
                     placeholder="+7 (999) 888-77-55"
                     onKeyDown={this.onKeyDownInputPhone}

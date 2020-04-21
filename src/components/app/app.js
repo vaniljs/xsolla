@@ -18,7 +18,7 @@ export default class App extends Component {
         this.setState({
             sending: true
         });
-        fetch("http://qeru.ru/xsolla/send.php", {
+        fetch("http://эваполимер.рф/xsolla//send.php", {
             method: "POST",
             body: new FormData(document.forms.sendform)
         }).then( (res) => {
